@@ -5,3 +5,9 @@ that one (correcting colors and such).
 In theory, you could download a zip file of the source code, rename the file
 extension to `.tdesktop-theme` and then apply that to Telegram, but don't quote
 me on this.
+
+## Build
+
+```bash
+make
+```
