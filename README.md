@@ -3,9 +3,7 @@
 
 ## Download
 
-https://t.me/BreezeDark
-
-Releases are automatically uploaded to this channel.
+Releases are automatically uploaded to this channel: https://t.me/BreezeDark
 
 ## Manual build
 
