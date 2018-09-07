@@ -159,7 +159,7 @@ dialogsUnreadBgMutedActive: dialogsDraftFgActive;
 dialogsUnreadFgActive: #3daee9;
 dialogsForwardBg: dialogsBgActive;
 dialogsForwardFg: dialogsNameFgActive;
-searchedBarBg: #F5F6F7;
+searchedBarBg: #232629;
 searchedBarBorder: #242424;
 searchedBarFg: #fcfcfc;
 topBarBg: #31363b;
