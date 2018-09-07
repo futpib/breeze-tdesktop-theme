@@ -1,0 +1,22 @@
+{
+  "name": "breeze-dark-tdesktop-theme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:futpib/breeze-dark-tdesktop-theme.git",
+  "author": "futpib <futpib@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "send": "node ./bot.js"
+  },
+  "dependencies": {
+    "eslint-config-xo-overrides": "^1.1.2",
+    "node-telegram-bot-api": "^0.30.0",
+    "socks5-https-client": "^1.2.1"
+  },
+  "xo": {
+    "extends": [
+      "eslint-config-xo-overrides"
+    ]
+  }
+}
