@@ -22,7 +22,8 @@ const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, {
 });
 
 const caption = (slug && commit) ?
-	`https://github.com/${slug}/commit/${commit}` :
+//	`https://github.com/${slug}/commit/${commit}` :
+	commit.slice(0, 7) :
 	'manual build';
 
 async function main() {
