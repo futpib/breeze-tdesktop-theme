@@ -1,0 +1,3 @@
+[submodule "breeze"]
+	path = breeze
+	url = git@github.com:KDE/breeze.git
