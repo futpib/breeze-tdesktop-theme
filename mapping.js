@@ -5,6 +5,7 @@ module.exports = ({
 	breeze,
 	alpha,
 	mix,
+	overlay,
 }) => ({
 
 	// #282e33; // white: fallback for background
@@ -12,9 +13,9 @@ module.exports = ({
 	// #f5f5f5; // black: fallback for text
 	windowFg: breeze.Window.ForegroundNormal,
 	// #313b43; // light gray: fallback for background with mouse over
-	windowBgOver: alpha(breeze.Window.DecorationHover, 0.25),
+	windowBgOver: tg => overlay(tg.windowBg, alpha(breeze.Window.DecorationHover, 0.25)),
 	// #3f4850; // darker gray: fallback for ripple effect
-	windowBgRipple: alpha(breeze.Window.DecorationHover, 0.5),
+	windowBgRipple: tg => overlay(tg.windowBg, alpha(breeze.Window.DecorationHover, 0.5)),
 	// #e9ecf0; // black: fallback for text with mouse over
 	windowFgOver: tg => tg.windowFg,
 	// #82868a; // gray: fallback for additional text
@@ -391,7 +392,7 @@ module.exports = ({
 	// #43474d; //
 	dialogsRippleBg: 'lightButtonBgRipple',
 	// #12a798; //
-	dialogsRippleBgActive: alpha(breeze.Window.DecorationActive, 0.75),
+	dialogsRippleBgActive: tg => overlay(tg.dialogsRippleBg, alpha(breeze.Window.DecorationActive, 0.75)),
 	// dialogsBgActive; // forwarding panel background (when forwarding messages in the smallest window size)
 	dialogsForwardBg: 'dialogsBgActive',
 	// dialogsNameFgActive; // forwarding panel text (when forwarding messages in the smallest window size)

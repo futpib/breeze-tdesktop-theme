@@ -41,6 +41,19 @@ const alpha = (c, a) => hex(color(c).alpha(typeof a === 'number' ? a : (parseInt
 
 const mix = (a, b, r) => hex(color(a).mix(color(b), r));
 
+const overlay = (bg, fg) => {
+	const { color: [ bgr, bgg, bgb ], valpha: bga } = color(bg);
+	const { color: [ fgr, fgg, fgb ], valpha: fga } = color(fg);
+
+	const a = bga + fga - (bga * fga);
+
+	const r = ((fgr * fga) + ((bgr * bga) * (1 - fga))) / a;
+	const g = ((fgg * fga) + ((bgg * bga) * (1 - fga))) / a;
+	const b = ((fgb * fga) + ((bgb * bga) * (1 - fga))) / a;
+
+	return hex(color([ r, g, b, a ]));
+};
+
 const parseBreezeColors = pipe(
 	x => typeof x === 'string' ? x : x.toString('utf8'),
 	ini.parse,
@@ -52,7 +65,7 @@ const evalStringRefs = intermediate => map(v => intermediate[v] || v, intermedia
 const evalThunks = intermediate => map(v => (typeof v === 'function' && v(intermediate)) || v, intermediate);
 
 const breezeToTelegram = pipe(
-	breeze => mapping({ breeze, alpha, mix }),
+	breeze => mapping({ breeze, alpha, mix, overlay }),
 	evalStringRefs,
 	evalStringRefs,
 	evalThunks,
