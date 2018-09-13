@@ -328,7 +328,7 @@ module.exports = ({
 	// #05a091; // chat list unread badge background for not muted chat
 	dialogsUnreadBg: breeze.Window.DecorationFocus,
 	// #495159; // chat list unread badge background for muted chat
-	dialogsUnreadBgMuted: breeze.Window.BackgroundAlternate,
+	dialogsUnreadBgMuted: tg => mix(breeze.Window.BackgroundNormal, tg.dialogsUnreadFg, 0.25),
 	// #ffffff; // chat list unread badge text
 	dialogsUnreadFg: breeze.Window.ForegroundNormal,
 	// #353c43; // chat list background with mouse over
@@ -384,7 +384,7 @@ module.exports = ({
 	// dialogsTextFgActive; // chat list sent message tick / double tick icon for current (active) chat
 	dialogsSentIconFgActive: 'dialogsSentIconFg',
 	// dialogsTextFgActive; // chat list unread badge background for not muted chat for current (active) chat
-	dialogsUnreadBgActive: 'dialogsTextFgActive',
+	dialogsUnreadBgActive: 'dialogsUnreadBg',
 	// #cbf7e9; // chat list unread badge background for muted chat for current (active) chat
 	dialogsUnreadBgMutedActive: 'dialogsUnreadBgMuted',
 	// #039d8e; // chat list unread badge text for current (active) chat
