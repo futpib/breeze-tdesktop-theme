@@ -59,6 +59,14 @@ const parseBreezeColors = pipe(
 	ini.parse,
 	mapKeys(pipe(split(':'), last)),
 	map(map(hex)),
+	map(o => new Proxy(o, {
+		get(obj, prop) {
+			if (prop in obj) {
+				return obj[prop];
+			}
+			throw new TypeError('Undefined breeze theme property access: ' + prop);
+		},
+	})),
 );
 
 const evalStringRefs = intermediate => map(v => intermediate[v] || v, intermediate);

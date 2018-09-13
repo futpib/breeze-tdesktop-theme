@@ -392,7 +392,7 @@ module.exports = ({
 	// #43474d; //
 	dialogsRippleBg: 'lightButtonBgRipple',
 	// #12a798; //
-	dialogsRippleBgActive: tg => overlay(tg.dialogsRippleBg, alpha(breeze.Window.DecorationActive, 0.75)),
+	dialogsRippleBgActive: tg => overlay(tg.dialogsRippleBg, alpha(breeze.Window.DecorationFocus, 0.75)),
 	// dialogsBgActive; // forwarding panel background (when forwarding messages in the smallest window size)
 	dialogsForwardBg: 'dialogsBgActive',
 	// dialogsNameFgActive; // forwarding panel text (when forwarding messages in the smallest window size)
@@ -831,7 +831,7 @@ module.exports = ({
 	// #ffffff; // shared files / links checkbox icon for selected rows
 	overviewCheckFgActive: 'overviewCheckFg',
 	// #40ace333; // shared photos / videos / links fill for selected rows
-	overviewPhotoSelectOverlay: alpha(breeze.View.DecorationActive, '33'),
+	overviewPhotoSelectOverlay: alpha(breeze.View.DecorationFocus, '33'),
 
 	// #9c9c9c; // group members list in group profile user last seen text with mouse over
 	profileStatusFgOver: 'windowFg',
