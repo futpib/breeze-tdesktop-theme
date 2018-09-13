@@ -52,7 +52,7 @@ module.exports = ({
 	imageBgTransparent: 'windowFg',
 
 	// #2da192; // default active button background
-	activeButtonBg: breeze.Window.BackgroundAlternate,
+	activeButtonBg: breeze.Button.BackgroundNormal,
 	// #32a898; // default active button background with mouse over
 	activeButtonBgOver: 'windowBgOver',
 	// #42b8a8; // default active button ripple effect
@@ -409,7 +409,7 @@ module.exports = ({
 	// windowBg; // emoji panel background
 	emojiPanBg: 'windowBg',
 	// #20262b; // emoji panel categories background
-	emojiPanCategories: breeze.Window.BackgroundAlternate,
+	emojiPanCategories: breeze.Button.BackgroundNormal,
 	// #90949a; // emoji panel section header text
 	emojiPanHeaderFg: 'boxTitleFg',
 	// #fffffff2; // emoji panel section header background
@@ -562,7 +562,7 @@ module.exports = ({
 	// #009687; // inbox selected message background (and background of selected text in those messages)
 	msgInBgSelected: tg => mix(tg.msgInBg, breeze.Selection.BackgroundNormal),
 	// #2a2f33; // outbox message background
-	msgOutBg: mix(breeze.Window.BackgroundNormal, breeze.Window.BackgroundAlternate),
+	msgOutBg: mix(breeze.Window.BackgroundNormal, breeze.Window.ForegroundNormal, 0.08),
 	// #009687; // outbox selected message background (and background of selected text in those messages)
 	msgOutBgSelected: tg => mix(tg.msgOutBg, breeze.Selection.BackgroundNormal),
 
