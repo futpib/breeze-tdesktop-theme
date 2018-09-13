@@ -726,16 +726,16 @@ module.exports = ({
 	// windowBgActive; // inbox voice message active waveform lines (like played part of currently playing voice message)
 	msgWaveformInActive: breeze.Window.ForegroundActive,
 	// #ffffff; // inbox selected voice message active waveform lines (like played part of currently playing voice message)
-	msgWaveformInActiveSelected: breeze.Selection.ForegroundNormal,
+	msgWaveformInActiveSelected: tg => mix(tg.msgWaveformInInactive, breeze.Selection.ForegroundNormal),
 	// #5d6b76; // inbox voice message inactive waveform lines (like upcoming part of currently playing voice message)
 	msgWaveformInInactive: breeze.Window.ForegroundInactive,
 	// #41d1c0; // inbox selected voice message inactive waveform lines (like upcoming part of currently playing voice message)
-	msgWaveformInInactiveSelected: 'msgInBgSelected',
+	msgWaveformInInactiveSelected: 'historyFileInIconFg',
 
 	// #11bfab; // outbox voice message active waveform lines (like played part of currently playing voice message)
 	msgWaveformOutActive: 'msgWaveformInActive',
 	// #ffffff; // outbox selected voice message active waveform lines (like played part of currently playing voice message)
-	msgWaveformOutActiveSelected: breeze.Selection.ForegroundNormal,
+	msgWaveformOutActiveSelected: 'msgWaveformInActiveSelected',
 	// #596874; // outbox voice message inactive waveform lines (like upcoming part of currently playing voice message)
 	msgWaveformOutInactive: 'msgWaveformInInactive',
 	// #41d1c0; // outbox selected voice message inactive waveform lines (like upcoming part of currently playing voice message)
