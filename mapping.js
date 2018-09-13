@@ -583,12 +583,12 @@ module.exports = ({
 	// #748ea200; // inbox message shadow (below the bubble)
 	msgInShadow: tg => alpha(tg.msgInBg, 0.5),
 	// #538ebb00; // inbox selected message shadow (below the bubble)
-	msgInShadowSelected: tg => mix(tg.msgInShadow, breeze.Selection.BackgroundNormal),
+	msgInShadowSelected: 'msgInShadow',
 
 	// #00000000; // outbox message shadow (below the bubble)
 	msgOutShadow: tg => alpha(tg.msgOutBg, 0.5),
 	// #37a78d00; // outbox selected message shadow (below the bubble)
-	msgOutShadowSelected: tg => mix(tg.msgOutShadow, breeze.Selection.BackgroundNormal),
+	msgOutShadowSelected: 'msgOutShadow',
 
 	// #828d94; // inbox message time text
 	msgInDateFg: 'windowSubTextFg',
