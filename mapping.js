@@ -29,7 +29,7 @@ module.exports = ({
 	// #3fc1b0; // bright blue: fallback for blue filled active areas
 	windowBgActive: breeze.Window.DecorationFocus,
 	// #ffffff; // white: fallback for text on active areas
-	windowFgActive: breeze.Window.ForegroundNormal,
+	windowFgActive: breeze.Selection.ForegroundNormal,
 	// #4be1c3; // online blue: fallback for active text like online status
 	windowActiveTextFg: breeze.Window.ForegroundActive,
 
