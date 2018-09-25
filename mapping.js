@@ -917,7 +917,7 @@ module.exports = ({
 	// #0000003c; // controls background (like next photo / previous photo)
 	mediaviewControlBg: alpha(breeze.View.BackgroundNormal, '3c'),
 	// windowFgActive; // controls icon (like next photo / previous photo)
-	mediaviewControlFg: 'windowFgActive',
+	mediaviewControlFg: 'windowFg',
 	// #11111180; // caption text background (when viewing photo with caption)
 	mediaviewCaptionBg: alpha(breeze.View.BackgroundNormal, '80'),
 	// mediaviewControlFg; // caption text
