@@ -907,7 +907,7 @@ module.exports = ({
 	// #676767; // context menu item ripple effect
 	mediaviewMenuBgRipple: 'menuBgRipple',
 	// windowFgActive; // context menu item text
-	mediaviewMenuFg: 'windowFgActive',
+	mediaviewMenuFg: 'windowFg',
 
 	// #222222eb; // Media Viewer background
 	mediaviewBg: alpha(breeze.View.BackgroundNormal, 'eb'),
