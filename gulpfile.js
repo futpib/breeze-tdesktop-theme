@@ -61,7 +61,7 @@ const parseBreezeColors = pipe(
 	map(map(hex)),
 	map(o => new Proxy(o, {
 		get(obj, prop) {
-			if (prop in obj) {
+			if (prop in obj || prop === 'toJSON') {
 				return obj[prop];
 			}
 			throw new TypeError('Undefined breeze theme property access: ' + prop);
