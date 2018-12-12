@@ -1,3 +1,6 @@
 [submodule "breeze"]
 	path = breeze
 	url = https://github.com/KDE/breeze.git
+[submodule "tdesktop"]
+	path = tdesktop
+	url = https://github.com/telegramdesktop/tdesktop.git

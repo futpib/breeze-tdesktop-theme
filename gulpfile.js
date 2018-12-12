@@ -15,7 +15,12 @@ const {
 	adjust,
 	split,
 	last,
+	filter,
+	prop,
+	keys,
 	mapObjIndexed,
+	difference,
+	replace,
 } = require('ramda');
 
 const ini = require('ini');
@@ -71,6 +76,12 @@ const parseBreezeColors = pipe(
 
 const evalStringRefs = intermediate => map(v => intermediate[v] || v, intermediate);
 const evalThunks = intermediate => map(v => (typeof v === 'function' && v(intermediate)) || v, intermediate);
+
+const infiniteObject = new Proxy(() => infiniteObject, {
+	get() {
+		return infiniteObject;
+	},
+});
 
 const breezeToTelegram = pipe(
 	breeze => mapping({ breeze, alpha, mix, overlay }),
@@ -152,7 +163,31 @@ gulp.task(
 );
 
 gulp.task(
-	'default',
+	'compare-tdesktop-to-mapping',
+	() => gulp
+		.src('./tdesktop/Telegram/Resources/colors.palette')
+		.pipe(transform('utf8', pipe(
+			replace(/\/\*[\s\S]+\*\//gm, ''),
+			replace(/^\/\/.*/gm, ''),
+			split('\n'),
+			filter(Boolean),
+			map(split(': ')),
+			fromPairs,
+			tdesktop => {
+				const tdesktopKeys = keys(tdesktop);
+				const mappingKeys = keys(mapping(infiniteObject));
+				const missingKeys = pipe(
+					map(x => [ x, tdesktop[x] ]),
+					fromPairs,
+				)(difference(tdesktopKeys, mappingKeys));
+				const redundantKeys = difference(mappingKeys, tdesktopKeys);
+				console.log({ missingKeys, redundantKeys });
+			},
+		)))
+);
+
+gulp.task(
+	'breeze-to-telegram',
 	[ 'breeze-to-telegram-colors', 'breeze-to-telegram-bg' ],
 	() => gulp
 		.src('./dist/*')
@@ -163,3 +198,5 @@ gulp.task(
 		))
 		.pipe(gulp.dest('./dist/'))
 );
+
+gulp.task('default', [ 'breeze-to-telegram' ]);
