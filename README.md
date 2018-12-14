@@ -16,6 +16,6 @@ yarn
 yarn gulp
 ```
 
-## Fan fact
+## Fun fact
 
 This is actually kind of a "KDE to Telegram theme converter", might work with other KDE themes.
