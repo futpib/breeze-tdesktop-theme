@@ -3,6 +3,7 @@ const gulp = require('gulp');
 const transform = require('gulp-transform');
 const rename = require('gulp-rename');
 const zip = require('gulp-zip');
+const unzip = require('gulp-unzip');
 const flatmap = require('gulp-flatmap');
 
 const {
@@ -31,7 +32,7 @@ const jimp = require('jimp');
 
 const mapping = require('./mapping');
 
-const mapKeys = curry((fn, obj) => fromPairs(map(adjust(fn, 0), toPairs(obj))));
+const mapKeys = curry((fn, obj) => fromPairs(map(adjust(0, fn), toPairs(obj))));
 
 const hex = x => {
 	if (x && /^\d+,\d+,\d+$/.test(x)) {
@@ -165,8 +166,12 @@ gulp.task(
 gulp.task(
 	'compare-tdesktop-to-mapping',
 	() => gulp
-		.src('./tdesktop/Telegram/Resources/colors.palette')
+		.src('./tdesktop/Telegram/Resources/night.tdesktop-theme')
+		.pipe(unzip({
+			filter: ({ path }) => path === 'colors.tdesktop-theme',
+		}))
 		.pipe(transform('utf8', pipe(
+			x => (console.log(x), x),
 			replace(/\/\*[\s\S]+\*\//gm, ''),
 			replace(/^\/\/.*/gm, ''),
 			split('\n'),
@@ -182,21 +187,26 @@ gulp.task(
 				)(difference(tdesktopKeys, mappingKeys));
 				const redundantKeys = difference(mappingKeys, tdesktopKeys);
 				console.log({ missingKeys, redundantKeys });
+				return '';
 			},
 		)))
 );
 
 gulp.task(
 	'breeze-to-telegram',
-	[ 'breeze-to-telegram-colors', 'breeze-to-telegram-bg' ],
-	() => gulp
-		.src('./dist/*')
-		.pipe(flatmap(
-			(stream, dir) => gulp
-				.src(dir.path + '/*')
-				.pipe(zip(dir.relative + '.tdesktop-theme'))
-		))
-		.pipe(gulp.dest('./dist/'))
+	gulp.series(
+		gulp.parallel('breeze-to-telegram-colors', 'breeze-to-telegram-bg'),
+		() => gulp
+			.src('./dist/*')
+			.pipe(flatmap(
+				(stream, dir) => gulp
+					.src(dir.path + '/*')
+					.pipe(zip(dir.relative + '.tdesktop-theme'))
+			))
+			.pipe(gulp.dest('./dist/'))
+	)
 );
 
-gulp.task('default', [ 'breeze-to-telegram' ]);
+gulp.task('default', gulp.series('breeze-to-telegram'));
+
+gulp.on('error', console.error);
