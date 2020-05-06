@@ -1021,4 +1021,25 @@ module.exports = ({
 
 	// #e4eaef;
 	overviewCheckBorder: 'windowFg',
+
+	// #49483F;
+	sideBarBg: 'windowBg',
+	// #646357;
+	sideBarBgActive: 'windowBgActive',
+	// #727162;
+	sideBarBgRipple: 'windowBgRipple',
+	// #A29F93;
+	sideBarTextFg: 'windowFg',
+	// #FFFFFF;
+	sideBarTextFgActive: 'windowFgActive',
+	// #A29F93;
+	sideBarIconFg: 'menuIconFg',
+	// #FFFFFF;
+	sideBarIconFgActive: 'menuIconFg',
+	// #A7C4CC;
+	sideBarBadgeBg: 'dialogsUnreadBg',
+	// #A29F93;
+	sideBarBadgeBgMuted: 'dialogsUnreadBgMuted',
+	// #49483F;
+	sideBarBadgeFg: 'dialogsUnreadFg',
 });
