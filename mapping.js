@@ -1022,23 +1022,23 @@ module.exports = ({
 	// #e4eaef;
 	overviewCheckBorder: 'windowFg',
 
-	// #49483F;
+	// #0e1621; // filters side bar background
 	sideBarBg: 'windowBg',
-	// #646357;
+	// #25303e; // filters side bar active background
 	sideBarBgActive: 'windowBgActive',
-	// #727162;
+	// #1e2733; // filters side bar ripple effect
 	sideBarBgRipple: 'windowBgRipple',
-	// #A29F93;
+	// #768c9e; // filters side bar text
 	sideBarTextFg: 'windowFg',
-	// #FFFFFF;
+	// #64b9fa; // filters side bar active item text
 	sideBarTextFgActive: 'windowFgActive',
-	// #A29F93;
+	// #768c9e; // filters side bar icon
 	sideBarIconFg: 'menuIconFg',
-	// #FFFFFF;
+	// #5eb5f7; // filters side bar active item icon
 	sideBarIconFgActive: 'menuIconFg',
-	// #A7C4CC;
+	// #5eb5f7; // filters side bar badge background
 	sideBarBadgeBg: 'dialogsUnreadBg',
-	// #A29F93;
+	// #768c9e; // filters side bar unimportant badge background
 	sideBarBadgeBgMuted: 'dialogsUnreadBgMuted',
 	// #49483F;
 	sideBarBadgeFg: 'dialogsUnreadFg',
