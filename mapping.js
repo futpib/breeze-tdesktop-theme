@@ -382,7 +382,7 @@ module.exports = ({
 	// #ffffff99; // chat list sending message icon (clock) for current (active) chat
 	dialogsSendingIconFgActive: 'historySendingOutIconFg',
 	// dialogsTextFgActive; // chat list sent message tick / double tick icon for current (active) chat
-	dialogsSentIconFgActive: 'dialogsSentIconFg',
+	dialogsSentIconFgActive: 'dialogsTextFgActive',
 	// dialogsTextFgActive; // chat list unread badge background for not muted chat for current (active) chat
 	dialogsUnreadBgActive: 'dialogsUnreadBg',
 	// #cbf7e9; // chat list unread badge background for muted chat for current (active) chat
