@@ -10,7 +10,7 @@
     "send": "node ./bot.js"
   },
   "dependencies": {
-    "color": "^3.0.0",
+    "color": "^3.1.3",
     "eslint-config-xo-overrides": "^1.1.2",
     "gulp": "^4.0.2",
     "gulp-flatmap": "^1.0.2",
@@ -19,13 +19,13 @@
     "gulp-stream-to-promise": "^0.1.0",
     "gulp-transform": "^3.0.5",
     "gulp-unzip": "^1.1.0",
-    "gulp-zip": "^5.0.1",
+    "gulp-zip": "^5.0.2",
     "ini": "^1.3.5",
-    "jimp": "^0.10.3",
-    "node-telegram-bot-api": "^0.40.0",
-    "ramda": "^0.27.0",
+    "jimp": "^0.16.1",
+    "node-telegram-bot-api": "^0.50.0",
+    "ramda": "^0.27.1",
     "socks5-https-client": "^1.2.1",
-    "through2": "^3.0.1"
+    "through2": "^4.0.2"
   },
   "xo": {
     "extends": [
