@@ -1,9 +1,10 @@
-name: main
+name: release
 on:
-  - push
-  - pull_request
+  release:
+    types:
+      - created
 jobs:
-  test:
+  release:
     name: Node.js ${{ matrix.node-version }}
     runs-on: ubuntu-latest
     strategy:
@@ -18,3 +19,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn install
       - run: yarn gulp
+      - name: Upload to GitHub Releases
+        uses: actions/upload-artifact@v2
+        with:
+          path: ./dist/*.tdesktop-theme
+      - name: Send to Telegram
+        run: yarn send
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
