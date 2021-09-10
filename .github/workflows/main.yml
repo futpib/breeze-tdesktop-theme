@@ -20,3 +20,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn install
       - run: yarn gulp
+      - uses: actions/upload-artifact@v2
+        with:
+          path: ./dist/*.tdesktop-theme
