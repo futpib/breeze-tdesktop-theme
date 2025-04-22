@@ -7,7 +7,7 @@ Releases are automatically uploaded to this channel: https://t.me/BreezeDark
 
 ## Preview
 
-![](https://i.imgur.com/40jhmIN.png)
+![](https://ipfs.io/ipfs/bafybeicipda2e4euvcxvkvxn6z6xk3b3ozjl3mcthjfgabncc6bjz2y7za#.png)
 
 ## Manual build
 
